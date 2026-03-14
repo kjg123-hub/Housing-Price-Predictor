@@ -1,10 +1,11 @@
-Melbourne House Price Prediction
+**Melbourne House Price Prediction**
+
+Predicting residential property prices in Melbourne, Australia by comparing 7 regression models. The best model, **LightGBM**, achieved an **R² of 0.94** on the test set.
+
 ---
 Libraries Used
 
 `pandas` · `numpy` · `scikit-learn` · `XGBoost` · `LightGBM` · `matplotlib` · `seaborn` · `missingno` · `scipy`
-Predicting residential property prices in Melbourne, Australia by comparing 7 regression models. The best model, **LightGBM**, achieved an **R² of 0.94** on the test set.
-
 ---
 
 Dataset
