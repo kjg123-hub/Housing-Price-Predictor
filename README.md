@@ -1,20 +1,19 @@
-# Melbourne House Price Prediction
-
+Melbourne House Price Prediction
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python) ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.x-orange) ![XGBoost](https://img.shields.io/badge/XGBoost-enabled-green) ![LightGBM](https://img.shields.io/badge/LightGBM-enabled-yellowgreen)
 
 Predicting residential property prices in Melbourne, Australia by comparing 7 regression models. The best model, **LightGBM**, achieved an **R² of 0.94** on the test set.
 
 ---
 
-## Dataset
+Dataset
 
-- **Source:** [Melbourne Housing Snapshot — Kaggle](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)
-- **Size:** 13,580 property listings across Melbourne suburbs
-- **Features:** 21 columns including location, property type, size, distance from CBD, and sale details
+- Source: [Melbourne Housing Snapshot — Kaggle](https://www.kaggle.com/datasets/dansbecker/melbourne-housing-snapshot)
+- Size: 13,580 property listings across Melbourne suburbs
+- Features: 21 columns including location, property type, size, distance from CBD, and sale details
 
 ---
 
-## Project Structure
+Project Structure
 
 ```
 melbourne-house-price-prediction/
@@ -26,7 +25,7 @@ melbourne-house-price-prediction/
 
 ---
 
-## Key Steps
+Key Steps
 
 - **Exploratory Data Analysis** distribution plots, missing value analysis, outlier detection using IQR and z-score
 - **Data Cleaning** — handling nulls, removing duplicates, feature extraction from address and date columns
@@ -37,7 +36,7 @@ melbourne-house-price-prediction/
 
 ---
 
-## Results
+Results
 
 | Model | R² (Test Set) |
 |---|---|
@@ -53,7 +52,7 @@ Tree-based ensemble methods consistently outperformed linear models, likely due 
 
 ---
 
-## How to Run
+How to Run
 
 ```bash
 # 1. Clone the repo
@@ -71,6 +70,6 @@ jupyter notebook melbourne.ipynb
 
 ---
 
-## Libraries Used
+Libraries Used
 
 `pandas` · `numpy` · `scikit-learn` · `XGBoost` · `LightGBM` · `matplotlib` · `seaborn` · `missingno` · `scipy`
