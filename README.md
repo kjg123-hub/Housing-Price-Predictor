@@ -43,13 +43,13 @@ Results
 
 | Model | R² (Test Set) |
 |---|---|
-| **LightGBM** | **0.94** |
-| XGBoost | ~0.93 |
-| Gradient Boosting | ~0.92 |
-| Extra Trees | ~0.91 |
-| Random Forest | ~0.91 |
-| Decision Tree | ~0.85 |
-| ElasticNet | ~0.75 |
+| **LightGBM** | **0.8653** |
+| XGBoost | 0.8671 |
+| Gradient Boosting | 0.8551 |
+| Extra Trees | 0.8317 |
+| Random Forest | 0.8428 |
+| Decision Tree | 0.7749 |
+| ElasticNet | 0.7321 |
 
 Tree-based ensemble methods consistently outperformed linear models, likely due to the non-linear relationships between location features and price.
 
