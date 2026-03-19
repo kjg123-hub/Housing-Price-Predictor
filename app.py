@@ -227,19 +227,20 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
                 color = "#16a34a" if row["impact"] > 0 else "#dc2626"
 
                 st.markdown(f"""
-                <div style="
-                display:flex;
-                justify-content:space-between;
-                padding:8px 12px;
-                margin-bottom:6px;
-                border-radius:6px;
-                background:#f9fafb;
-                ">
-                    <span>{sign} {row['feature']}</span>
-                    <span style="color:{color}; font-weight:600;">
-                        {sign}${abs(row['impact']):,.0f}
-                    </span>
-                </div>
+                    <div style="
+                        display:flex;
+                        color: "black";
+                        justify-content:space-between;
+                        padding:8px 12px;
+                        margin-bottom:6px;
+                        border-radius:6px;
+                        background:#f9fafb;
+                    ">
+                        <span>{sign} {row['feature']}</span>
+                        <span style="color:{color}; font-weight:600;">
+                            {sign}${abs(row['impact'])}
+                        </span>
+                    </div>
                 """, unsafe_allow_html=True)
 
             st.write("Input columns:", input_df.columns.tolist())
