@@ -150,7 +150,7 @@ with col2:
 # ── Predict ───────────────────────────────────────────────────────────────────
 st.divider()
 
-predict_ready = lat is not None or (suburb_input and postcode)
+predict_ready = lat is not None or postcode
 
 if st.button("Predict Price", type="primary", use_container_width=True, disabled=not predict_ready):
     if lat is None:
