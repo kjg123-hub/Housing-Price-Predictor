@@ -30,9 +30,9 @@ def load_model():
 model, feature_cols = load_model()
 
 @st.cache_resource
-def load_explainer(model):
+def load_explainer(_model):
     # get the trained model inside pipeline
-    regressor = model.named_steps["regressor"]
+    regressor = _model.named_steps["regressor"]
     return shap.TreeExplainer(regressor)
 
 explainer = load_explainer(model)
