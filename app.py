@@ -118,8 +118,8 @@ col1, col2 = st.columns(2)
 with col1:
     prop_type = st.selectbox(
         "Property Type",
-        options=["h", "t", "u"],
-        format_func=lambda x: {"h": "House", "t": "Townhouse", "u": "Unit"}[x]
+        options=["House", "Unit/Apartment", "Townhouse"],
+        # format_func=lambda x: {"h": "House", "t": "Townhouse", "u": "Unit"}[x]
     )
     building_area = st.number_input("Building Area (m²)", min_value=10, max_value=1000, value=150)
     year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1990)
@@ -170,7 +170,7 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
                 "Longtitude": lon,
                 "Propertycount": propertycount,
                 "Total_Internal_Rooms": total_rooms,
-                "Price_Category": "Medium"                  # placeholder
+                #"Price_Category": "Medium"                  # placeholder
             }])
 
             prediction = np.expm1(model.predict(input_df)[0])
