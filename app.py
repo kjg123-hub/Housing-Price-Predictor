@@ -37,7 +37,9 @@ def load_explainer(_model):
 
 explainer = load_explainer(model)
 
+
 # ── Styling ───────────────────────────────────────────────────────────────────
+
 st.markdown("""
     <style>
         .main { max-width: 920px; margin: auto; }
@@ -65,12 +67,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+
 # ── Header ────────────────────────────────────────────────────────────────────
+
 st.title("Melbourne House Price Predictor")
 st.caption("Enter a Melbourne address and property details to get an estimated sale price.")
 st.divider()
 
+
 # ── Address Input ─────────────────────────────────────────────────────────────
+
 address = st.text_input(
     "Property Address",
     placeholder="e.g. 45 Collins St, Melbourne VIC 3000"
@@ -120,7 +126,9 @@ if address:
 
 st.divider()
 
+
 # ── Property Details ──────────────────────────────────────────────────────────
+
 st.subheader("Property Details")
 st.caption("Fill in the property details below. Location fields are auto-filled from the address.")
 
@@ -133,15 +141,15 @@ with col1:
         # format_func=lambda x: {"h": "House", "t": "Townhouse", "u": "Unit"}[x]
     )
     building_area = st.number_input("Building Area (m²)", min_value=10, max_value=1000, value=150)
-    landsize = st.number_input("Plot Size (m²)", min_value=0, max_value=100000, value=500)
+    landsize = st.number_input("Plot Size (m²)", min_value=0, max_value=100000, value=300)
 
 with col2:
     total_rooms = st.number_input(
-        "Bed + Bath",
+        "Bedrooms + Bathrooms",
         min_value=1, max_value=20, value=5,
         # help="Bedrooms + bathrooms + other"
     )
-    year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1990)
+    year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1970)
     
     # propertycount = st.number_input(
     #     "Properties in Suburb (approx)",
@@ -162,7 +170,9 @@ with col2:
     # )
     council_input = ""
 
+
 # ── Predict ───────────────────────────────────────────────────────────────────
+
 st.divider()
 
 predict_ready = lat is not None or (suburb_input and postcode)
@@ -268,6 +278,8 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
             st.error(f"Prediction error: {e}")
             st.info("This may happen if the suburb or council area wasn't seen during training. Try editing those fields.")
 
+
 # ── Footer ────────────────────────────────────────────────────────────────────
+
 st.divider()
 st.caption("Built with LightGBM · scikit-learn · Streamlit · OpenStreetMap Nominatim")
