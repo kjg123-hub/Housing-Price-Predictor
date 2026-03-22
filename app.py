@@ -87,7 +87,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-
+lat, lon, suburb, postcode, council, distance = None, None, "", "", "", None
+suburb_input = ""
 # Top layout
 
 left_col, right_col = st.columns([1, 1], gap="large")
@@ -104,7 +105,7 @@ with right_col:
     total_rooms = st.number_input("Bedrooms + Bathrooms", min_value=1, max_value=20, value=5)
     year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1970)
     propertycount = 5000
-    council_input = st.text_input("Council Area", placeholder="e.g. Yarra, Boroondara")
+    council_input = st.text_input("Council Area", value=council, placeholder="e.g. Yarra, Boroondara")
 
 # left — Title + Address
 with left_col:
@@ -116,8 +117,7 @@ with left_col:
         placeholder="e.g. 45 Collins St, Melbourne VIC 3000"
     )
 
-lat, lon, suburb, postcode, council, distance = None, None, "", "", "", None
-suburb_input = ""
+
 
 if address:
     with st.spinner("Looking up address..."):
