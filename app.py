@@ -104,7 +104,7 @@ with right_col:
     total_rooms = st.number_input("Bedrooms + Bathrooms", min_value=1, max_value=20, value=5)
     year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1970)
     propertycount = 5000
-    council_input = ""
+    council_input = st.text_input("Council Area", placeholder="e.g. Yarra, Boroondara")
 
 # left — Title + Address
 with left_col:
@@ -155,9 +155,17 @@ if address:
             else:
                 with left_col:
                     st.error("Address not found. Try adding suburb and state, e.g. 'Richmond VIC'.")
+                with left_col:
+                    st.warning("Location lookup failed — enter manually:")
+                    postcode = st.text_input("Postcode", placeholder="e.g. 3121")
+                    distance = st.number_input("Distance from CBD (km)", min_value=0.0, max_value=100.0, value=10.0)
         except Exception as e:
-            with left_col:
+            with right_col:
                 st.error(f"Geocoding error: {e}")
+            with left_col:
+                st.warning("Location lookup failed — enter manually:")
+                postcode = st.text_input("Postcode", placeholder="e.g. 3121")
+                distance = st.number_input("Distance from CBD (km)", min_value=0.0, max_value=100.0, value=10.0)
 
 
 # Predict
