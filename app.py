@@ -10,16 +10,16 @@ from geopy.distance import geodesic
 import time
 import shap 
 
-# ── Config ──────────────────────────────────────────────────────────────────
+#                                                            Config 
 st.set_page_config(
     page_title="Melbourne House Price Predictor",
     page_icon="",
-    layout="centered"
+    layout="wide"
 )
 
 MELBOURNE_CBD = (-37.8136, 144.9631)
 
-# ── Load model ───────────────────────────────────────────────────────────────
+#                                                           Load model 
 @st.cache_resource
 def load_model():
     model = joblib.load("melbourne_model.pkl")
@@ -38,7 +38,7 @@ def load_explainer(_model):
 explainer = load_explainer(model)
 
 
-# ── Styling ───────────────────────────────────────────────────────────────────
+#                                                           Styling     
 
 st.markdown("""
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -92,7 +92,7 @@ st.markdown("""
 
 left_col, right_col = st.columns([1, 1], gap="large")
 
-# ── right — Property Details ───────────────────────────────────────────────────
+# right — Property Details
 with right_col:
     st.markdown('<div class="section-label">Property Details</div>', unsafe_allow_html=True)
     prop_type = st.selectbox(
@@ -106,7 +106,7 @@ with right_col:
     propertycount = 5000
     council_input = ""
 
-# ── left — Title + Address ───────────────────────────────────────────────────
+# left — Title + Address
 with left_col:
     st.title("Melbourne House Price Predictor")
     st.caption("Enter an address and property details to get an estimated sale price.")
@@ -160,7 +160,7 @@ if address:
                 st.error(f"Geocoding error: {e}")
 
 
-# ── Predict ───────────────────────────────────────────────────────────────────
+# Predict
 
 st.divider()
 
@@ -268,7 +268,7 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
             st.info("This may happen if the suburb or council area wasn't seen during training. Try editing those fields.")
 
 
-# ── Footer ────────────────────────────────────────────────────────────────────
+# Footer
 
 st.divider()
 st.caption("Built with LightGBM · scikit-learn · Streamlit · OpenStreetMap Nominatim")
