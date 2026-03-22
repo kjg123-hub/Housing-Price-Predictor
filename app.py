@@ -245,7 +245,6 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
                         padding:8px 12px;
                         margin-bottom:6px;
                         border-radius:6px;
-                        background:#343434;
                     ">
                         <span>{sign} {row['feature']}</span>
                         <span style="color:{color}; font-weight:600;">
