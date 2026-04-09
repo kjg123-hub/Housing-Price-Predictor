@@ -22,8 +22,8 @@ MELBOURNE_CBD = (-37.8136, 144.9631)
 # ── Load model ───────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    model = joblib.load("melbourne_model2.pkl")
-    with open("model_features2.json") as f:
+    model = joblib.load("melbourne_model.pkl")
+    with open("model_features.json") as f:
         features = json.load(f)
     return model, features
 
