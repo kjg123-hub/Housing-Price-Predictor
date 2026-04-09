@@ -22,8 +22,8 @@ MELBOURNE_CBD = (-37.8136, 144.9631)
 # ── Load model ───────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_model():
-    model = joblib.load("melbourne_model.pkl")
-    with open("model_features.json") as f:
+    model = joblib.load("melbourne_model2.pkl")
+    with open("model_features2.json") as f:
         features = json.load(f)
     return model, features
 
@@ -130,7 +130,7 @@ st.divider()
 # ── Property Details ──────────────────────────────────────────────────────────
 
 st.subheader("Property Details")
-st.caption("Fill in the property details below. Location fields are auto-filled from the address.")
+st.caption("Fill in the property details below. Default values are means. Location fields are auto-filled from the address.")
 
 col1, col2 = st.columns(2)
 
