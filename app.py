@@ -130,7 +130,7 @@ st.divider()
 # ── Property Details ──────────────────────────────────────────────────────────
 
 st.subheader("Property Details")
-st.caption("Fill in the property details below. Default values are means. Location fields are auto-filled from the address.")
+st.caption("Fill in the property details below. Location fields are auto-filled from the address.")
 
 col1, col2 = st.columns(2)
 
@@ -140,17 +140,13 @@ with col1:
         options=["House", "Unit/Apartment", "Townhouse"],
         # format_func=lambda x: {"h": "House", "t": "Townhouse", "u": "Unit"}[x]
     )
-    building_area = st.number_input("Building Area (m²)", min_value=10, max_value=1000, value=150)
+    bedrooms = st.number_input("Bedrooms", min_value=0, max_value=20, value=3)
+    bathrooms = st.number_input("Bathrooms", min_value=0, max_value=10, value=1)
     landsize = st.number_input("Plot Size (m²)", min_value=0, max_value=100000, value=300)
 
 with col2:
-    total_rooms = st.number_input(
-        "Bedrooms + Bathrooms",
-        min_value=1, max_value=20, value=5,
-        # help="Bedrooms + bathrooms + other"
-    )
-    year_built = st.number_input("Year Built", min_value=1800, max_value=2025, value=1970)
-    
+    car_spaces = st.number_input("Car Spaces", min_value=0, max_value=20, value=1)
+
     # propertycount = st.number_input(
     #     "Properties in Suburb (approx)",
     #     min_value=1, max_value=50000, value=5000,
@@ -171,6 +167,7 @@ with col2:
     council_input = ""
 
 
+
 # ── Predict ───────────────────────────────────────────────────────────────────
 
 st.divider()
@@ -188,14 +185,13 @@ if st.button("Predict Price", type="primary", use_container_width=True, disabled
                 "Distance": distance,
                 "Postcode": postcode,
                 "Landsize": landsize,
-                "BuildingArea": building_area,
-                "YearBuilt": year_built,
                 "CouncilArea": council_input or council,
                 "Lattitude": lat,
                 "Longtitude": lon,
                 "Propertycount": propertycount,
-                "Total_Internal_Rooms": total_rooms,
-                #"Price_Category": "Medium"                  # placeholder
+                "Bedroom2": bedrooms,
+                "Bathroom": bathrooms,
+                "Car": car_spaces,
             }])
 
             prediction = np.expm1(model.predict(input_df)[0])
