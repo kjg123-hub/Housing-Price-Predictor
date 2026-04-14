@@ -244,12 +244,13 @@ with col2:
         help="Auto-filled from address. Edit if incorrect."
     )   
     propertycount = SUBURB_PROPERTYCOUNT.get(suburb_input or suburb, PROPERTYCOUNT_DEFAULT)
-    # council_input = st.text_input(
-    #     "Council Area (auto-filled)",
-    #     value=council,
-    #     help="Auto-filled from address. Edit if incorrect."
-    # )
-    council_input = ""
+    council_input = st.text_input(
+        "Council Area (auto-filled)",
+            value=council,
+            help="Auto-filled from address. Edit if incorrect."
+        )
+    
+    # council_input = ""
 
 
 
