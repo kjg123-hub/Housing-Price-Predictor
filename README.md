@@ -42,20 +42,8 @@ The model was selected after benchmarking against XGBoost, Gradient Boosting, Ra
 
 ### Features Used by Importance
 
-| Feature | Source | Weight |
-|---|---|---|
-| Plot Size (m²) | User input | 20% |
-| Longitude | Geolocator | 19% |
-| Latitude | Geolocator | 19% |
-| Distance from CBD (km) | Geolocator | 10% |
-| Properties in suburb | Lookup table (from training data) | 6% |
-| Suburb | Geolocator | 5% |
-| Postcode | Geolocator | 4% |
-| Bedrooms | User input | 4% |
-| Council area | Geolocator | 3% |
-| Bathrooms | User input | 3% |
-| Car spaces | User input | 3% |
-| Property type | User input | 3% |
+<img width="800" height="784" alt="image" src="https://github.com/user-attachments/assets/03e14f40-9798-4783-938f-68ac395af3ac" />
+
 
 Location signals (latitude, longitude, distance, suburb, postcode) collectively account for roughly 57% of the model's predictive weight.
 
