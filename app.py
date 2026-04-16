@@ -12,7 +12,7 @@ import shap
 
 # ── Config ──────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Melbourne House Price Predictor",
+    page_title="Melbourne Property Price Predictor",
     page_icon="",
     layout="centered"
 )
@@ -180,7 +180,7 @@ st.markdown("""
 
 # ── Header ────────────────────────────────────────────────────────────────────
 
-st.title("Melbourne House Price Predictor")
+st.title("Melbourne Property Price Predictor")
 st.caption("Enter a Melbourne address and property details to get an estimated sale price.")
 st.divider()
 
