@@ -3,7 +3,7 @@
 **Live app:** (https://kjg123-hub-housing-price-predictor-app-nro78q.streamlit.app/#property-details)
 
 <p align="center">
-  <img width="400" height="365" alt="melb_app_ss1" src="https://github.com/user-attachments/assets/292a3696-d487-4ead-9989-dff2a464fd86" />
+  <img width="500" height="365" alt="melb_app_ss1" src="https://github.com/user-attachments/assets/292a3696-d487-4ead-9989-dff2a464fd86" />
 </p>
 
 A machine learning web app that estimates residential property sale prices in Melbourne, Australia. Users enter a street address and property details to get a price estimate with an explanation of the key factors driving it.
@@ -22,7 +22,7 @@ A machine learning web app that estimates residential property sale prices in Me
 3. LightGBM model predicts a sale price, and SHAP values explain which features pushed the estimate and by how much.
 
 <p align="center">
-  <img width="620" height="427" alt="image" src="https://github.com/user-attachments/assets/2efd9cfe-9726-4430-acc2-3a7a00e1723e" />
+  <img width="500" height="427" alt="image" src="https://github.com/user-attachments/assets/2efd9cfe-9726-4430-acc2-3a7a00e1723e" />
 </p>
 
 ---
