@@ -147,6 +147,10 @@ st.markdown("""
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
         }
         .main { max-width: 400px; margin: auto; }
+            
+        button.step-up { display: none !important; }
+        button.step-down { display: none !important; }
+            
         .result-box {
             background: #f0fdf4;
             border: 2px solid #22c55e;
@@ -263,7 +267,7 @@ with col2:
     )   
     propertycount = SUBURB_PROPERTYCOUNT.get(suburb_input or suburb, PROPERTYCOUNT_DEFAULT)
     council_input = st.text_input(
-        "Council Area (auto-filled)",
+        "Council Area (auto-filled if available, enter if known)",
             value=council,
             help="Auto-filled from address. Edit if incorrect."
         )
