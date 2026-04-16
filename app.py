@@ -119,6 +119,24 @@ SUBURB_PROPERTYCOUNT = {
     "Yarra Glen": 1160, "Yarraville": 6543,
 }
 PROPERTYCOUNT_DEFAULT = 6555  # fallback to median
+
+KNOWN_COUNCILS = {
+    "Banyule", "Bayside", "Boroondara", "Brimbank", "Cardinia", "Casey",
+    "Darebin", "Frankston", "Glen Eira", "Greater Dandenong", "Hobsons Bay",
+    "Hume", "Kingston", "Knox", "Macedon Ranges", "Manningham", "Maribyrnong",
+    "Maroondah", "Melbourne", "Melton", "Monash", "Moonee Valley", "Moorabool",
+    "Moreland", "Nillumbik", "Port Phillip", "Stonnington", "Whitehorse",
+    "Whittlesea", "Wyndham", "Yarra", "Yarra Ranges",
+}
+ 
+def normalise_council(raw_council: str) -> str:
+    import re
+    stripped = re.sub(
+        r"^(City of|Shire of|Borough of|Rural City of|Municipal Council of|Council of)\s*",
+        "", raw_council, flags=re.IGNORECASE
+    ).strip()
+    return stripped if stripped in KNOWN_COUNCILS else raw_council
+ 
  
 
 # ── Styling ───────────────────────────────────────────────────────────────────
@@ -192,7 +210,7 @@ if address:
                     or ""
                 )
                 postcode = str(raw.get("postcode", ""))
-                council = raw.get("county", raw.get("state_district", ""))
+                council = normalise_council(raw.get("county", raw.get("state_district", "")))
                 distance = round(geodesic(MELBOURNE_CBD, (lat, lon)).km, 2)
 
                 st.success(f"Found: **{suburb}**, {postcode}")
@@ -251,6 +269,8 @@ with col2:
         )
     
     # council_input = ""
+
+
 
 
 
