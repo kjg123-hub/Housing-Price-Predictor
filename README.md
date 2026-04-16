@@ -1,4 +1,4 @@
-# Melbourne House Price Predictor
+# Melbourne Property Price Predictor
 
 **Live app:** (https://kjg123-hub-housing-price-predictor-app-nro78q.streamlit.app/#property-details)
 
