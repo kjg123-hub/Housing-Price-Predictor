@@ -22,7 +22,7 @@ A machine learning web app that estimates residential property sale prices in Me
 3. LightGBM model predicts a sale price, and SHAP values explain which features pushed the estimate and by how much.
 
 <p align="center">
-  <img width="500" height="427" alt="image" src="https://github.com/user-attachments/assets/2efd9cfe-9726-4430-acc2-3a7a00e1723e" />
+  <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2efd9cfe-9726-4430-acc2-3a7a00e1723e" />
 </p>
 
 ---
@@ -45,7 +45,7 @@ During testing phase, the number of car spaces was often not publicly available 
 
 ### Features Used by Importance
 
-<img width="800" height="784" alt="image" src="https://github.com/user-attachments/assets/03e14f40-9798-4783-938f-68ac395af3ac" />
+<img width="800" height="725" alt="image" src="https://github.com/user-attachments/assets/03e14f40-9798-4783-938f-68ac395af3ac" />
 
 
 Location signals (latitude, longitude, distance, suburb, postcode) collectively account for roughly 57% of the model's predictive weight.
