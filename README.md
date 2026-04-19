@@ -84,7 +84,7 @@ The dataset contains 13,580 residential property sales with 21 features. Sales i
 | Preprocessing | scikit-learn ColumnTransformer (OrdinalEncoder + SimpleImputer) |
 | Explainability | SHAP TreeExplainer |
 | Geocoding | geopy / OpenStreetMap Nominatim |
-| App | panda, numpy, geopy, streamlit |
+| App | panda, numpy, joblib, -> streamlit |
 | Deployment | Streamlit Cloud |
 
 ---
