@@ -2,8 +2,6 @@
 
 **Live app:** [Live App | Streamlit](https://kjg123-hub-housing-price-predictor-app-nro78q.streamlit.app/#property-details)
 
-[Visit Google](https://www.google.com)
-
 <p align="center">
   <img width="500" height="340" alt="melb_app_ss1" src="https://github.com/user-attachments/assets/292a3696-d487-4ead-9989-dff2a464fd86" />
 </p>
